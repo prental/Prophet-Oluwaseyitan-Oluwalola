@@ -481,103 +481,69 @@ Mercy Day Service: The 6:00 p.m. service is the more general Wednesday worship f
                     </div>
                 </div>
 
-               <div class="bg-gray-50 rounded-lg p-8">
-    <form onsubmit="redirectToWhatsApp(event)" class="space-y-6">
-        <div>
-            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name *</label>
-            <input
-                type="text"
-                id="name"
-                required
-                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-            />
-        </div>
-
-        <div>
-            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
-            <input
-                type="email"
-                id="email"
-                required
-                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-            />
-        </div>
-
-        <div>
-            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
-            <input
-                type="tel"
-                id="phone"
-                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-            />
-        </div>
-
-        <div>
-            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
-            <input
-                type="text"
-                id="subject"
-                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-            />
-        </div>
-
-        <div>
-            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message *</label>
-            <textarea
-                id="message"
-                required
-                rows="5"
-                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-            ></textarea>
-        </div>
-
-        <button
-            type="submit"
-            class="w-full bg-purple-700 hover:bg-purple-800 text-white font-medium py-3 px-6 rounded-md transition-colors flex items-center justify-center"
-        >
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
-            </svg>
-            Send Message
-        </button>
-    </form>
+       <div class="bg-gray-50 rounded-lg p-8">
+<form id="contact-form" class="space-y-6">
+<div>
+<label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+<input
+type="text"
+id="name"
+required
+class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+/>
 </div>
 
-<script>
-    function redirectToWhatsApp(event) {
-        event.preventDefault(); // Stop the form from submitting normally
+<div>
+<label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+<input
+type="email"
+id="email"
+required
+class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+/>
+</div>
 
-        // 1. Get the values from the form fields
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value;
+<div>
+<label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+<input
+type="tel"
+id="phone"
+class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+/>
+</div>
 
-        // 2. Define your WhatsApp number (include country code without + or 00)
-        const whatsappNumber = "+2348062119175"; // <-- REPLACE WITH YOUR WHATSAPP NUMBER! (e.g., 2348012345678)
+<div>
+<label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+<input
+type="text"
+id="subject"
+class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+/>
+</div>
 
-        // 3. Construct the message body
-        const fullMessage = `
-*New Contact Form Message*
----
-*Name:* ${name}
-*Email:* ${email}
-*Phone:* ${phone || 'N/A'}
-*Subject:* ${subject || 'N/A'}
----
-*Message:*
-${message}
-        `.trim(); // .trim() removes leading/trailing whitespace
+<div>
+<label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message *</label>
+<textarea
+id="message"
+required
+rows="5"
+class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+></textarea>
+</div>
 
-        // 4. Encode the message for the URL and construct the final WhatsApp link
-        const encodedMessage = encodeURIComponent(fullMessage);
-        const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-
-        // 5. Redirect the user
-        window.open(whatsappLink, '_blank');
-    }
-</script>
+<button
+type="submit"
+class="w-full bg-purple-700 hover:bg-purple-800 text-white font-medium py-3 px-6 rounded-md transition-colors flex items-center justify-center"
+>
+<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+</svg>
+Send Message
+</button>
+</form>
+</div>
+</div>
+</div>
 
   <!-- Footer -->
 <footer class="bg-slate-800 text-white py-12">
